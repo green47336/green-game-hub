@@ -1,3 +1,8 @@
+This project follows Mosh Hamedani's tutorial on his React 18 + TypeScript course.
+You can find the course I used on his website: https://codewithmosh.com/
+Here is his source code: https://github.com/mosh-hamedani/game-hub
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
