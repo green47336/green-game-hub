@@ -12,18 +12,7 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card.Root>
       <Image src={getCroppedImageUrl(game.background_image)} />
-      <Card.Header
-        fontSize="2xl"
-        fontWeight="bold"
-        alignSelf={"center"}
-        padding={0}
-      >
-        {game.name}
-      </Card.Header>
       <Card.Body>
-        {/* <PlatformIconList
-            platforms={game.parent_platforms.map((p) => p.platform)}
-            /> */}
         <HStack justifyContent="space-between">
           <Flex wrap={"wrap"}>
             {game.parent_platforms.map((p) => (
@@ -35,6 +24,9 @@ const GameCard = ({ game }: Props) => {
           {game.metacritic && <CriticScore score={game.metacritic} />}
         </HStack>
       </Card.Body>
+      <Card.Header fontSize="2xl" fontWeight="bold" alignSelf={"center"}>
+        {game.name}
+      </Card.Header>
     </Card.Root>
   );
 };
