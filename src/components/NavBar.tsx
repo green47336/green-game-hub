@@ -1,7 +1,7 @@
 import { HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/logo.webp";
-import { ColorModeButton } from "./ui/color-mode";
 import SearchInput from "./SearchInput";
+import { ColorModeButton } from "./ui/color-mode";
 
 // TODO: Refactor so we don't have to pass props here to get to SearchInput
 interface Props {
