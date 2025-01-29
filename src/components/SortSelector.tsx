@@ -27,11 +27,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
     },
     {
       value: "-metacritic",
-      label: "Popularity",
-    },
-    {
-      value: "-rating",
-      label: "Average rating",
+      label: "Metacritic Rating",
     },
   ];
 
