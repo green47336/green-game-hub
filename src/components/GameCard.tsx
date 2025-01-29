@@ -32,7 +32,7 @@ const GameCard = ({ game }: Props) => {
               </Tag>
             ))}
           </Flex>
-          <CriticScore score={game.metacritic} />
+          {game.metacritic && <CriticScore score={game.metacritic} />}
         </HStack>
       </Card.Body>
     </Card.Root>
