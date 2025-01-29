@@ -3,10 +3,11 @@ import { BsChevronDown } from "react-icons/bs";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 
 interface Props {
+  sortOrder: string;
   onSelectSortOrder: (order: string) => void;
 }
 
-const SortSelector = ({ onSelectSortOrder }: Props) => {
+const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   const sortOrders = [
     {
       value: "",
@@ -34,11 +35,15 @@ const SortSelector = ({ onSelectSortOrder }: Props) => {
     },
   ];
 
+  const currentSortOrder = sortOrders.find(
+    (order) => order.value === sortOrder
+  );
+
   return (
     <MenuRoot>
       <MenuTrigger asChild>
         <Button variant="outline" size="sm">
-          {`Order by: Relevance`} <BsChevronDown />
+          Order by: {currentSortOrder?.label || "Relevance"} <BsChevronDown />
         </Button>
       </MenuTrigger>
       <MenuContent>
