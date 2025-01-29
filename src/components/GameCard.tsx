@@ -1,7 +1,7 @@
 import { Game } from "@/hooks/useGames";
-import { Card, HStack, Image, SimpleGrid } from "@chakra-ui/react";
-import CriticScore from "./CriticScore";
+import { Card, Flex, HStack, Image } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
+import CriticScore from "./CriticScore";
 import { Tag } from "./ui/tag";
 
 interface Props {
@@ -25,13 +25,13 @@ const GameCard = ({ game }: Props) => {
             platforms={game.parent_platforms.map((p) => p.platform)}
             /> */}
         <HStack justifyContent="space-between">
-          <SimpleGrid columns={2} gap="1px">
+          <Flex wrap={"wrap"}>
             {game.parent_platforms.map((p) => (
               <Tag key={p.platform.id} size={"sm"}>
                 {p.platform.name}
               </Tag>
             ))}
-          </SimpleGrid>
+          </Flex>
           <CriticScore score={game.metacritic} />
         </HStack>
       </Card.Body>
