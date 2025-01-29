@@ -1,8 +1,8 @@
 import { Game } from "@/hooks/useGames";
-import { Card, HStack, Image } from "@chakra-ui/react";
-import PlatformIconList from "./PlatformIconList";
+import { Card, HStack, Image, SimpleGrid } from "@chakra-ui/react";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
+import { Tag } from "./ui/tag";
 
 interface Props {
   game: Game;
@@ -11,8 +11,13 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <Card.Root>
-      <Image src={getCroppedImageUrl(game.background_image)} />
-      <p>{game.name}</p>
+      <Image
+        src={
+          game.background_image
+            ? getCroppedImageUrl(game.background_image)
+            : "https://archive.org/details/placeholder-image"
+        }
+      />
       <Card.Header
         fontSize="2xl"
         fontWeight="bold"
@@ -22,10 +27,17 @@ const GameCard = ({ game }: Props) => {
         {game.name}
       </Card.Header>
       <Card.Body>
-        <HStack justifyContent="space-between">
-          <PlatformIconList
+        {/* <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
-          />
+            /> */}
+        <HStack justifyContent="space-between">
+          <SimpleGrid columns={2} gap="1px">
+            {game.parent_platforms.map((p) => (
+              <Tag key={p.platform.id} size={"sm"}>
+                {p.platform.name}
+              </Tag>
+            ))}
+          </SimpleGrid>
           <CriticScore score={game.metacritic} />
         </HStack>
       </Card.Body>
