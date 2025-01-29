@@ -11,13 +11,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <Card.Root>
-      <Image
-        src={
-          game.background_image
-            ? getCroppedImageUrl(game.background_image)
-            : "https://archive.org/details/placeholder-image"
-        }
-      />
+      <Image src={getCroppedImageUrl(game.background_image)} />
       <Card.Header
         fontSize="2xl"
         fontWeight="bold"
