@@ -24,7 +24,13 @@ const GameCard = ({ game }: Props) => {
           {game.metacritic && <CriticScore score={game.metacritic} />}
         </HStack>
       </Card.Body>
-      <Card.Header fontSize="2xl" fontWeight="bold" alignSelf={"center"}>
+      <Card.Header
+        fontSize="2xl"
+        fontWeight="bold"
+        alignSelf={"center"}
+        paddingBottom={5}
+        paddingTop={0}
+      >
         {game.name}
       </Card.Header>
     </Card.Root>
