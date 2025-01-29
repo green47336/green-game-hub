@@ -14,7 +14,7 @@ const GameCard = ({ game }: Props) => {
       <Image src={getCroppedImageUrl(game.background_image)} />
       <Card.Body>
         <HStack justifyContent="space-between">
-          <Flex wrap={"wrap"}>
+          <Flex wrap={"wrap"} gap={1}>
             {game.parent_platforms.map((p) => (
               <Tag key={p.platform.id} size={"sm"}>
                 {p.platform.name}
