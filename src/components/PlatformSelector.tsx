@@ -5,8 +5,8 @@ import { BsChevronDown } from "react-icons/bs";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 
 interface Props {
-  onSelectPlatform: (platform: Platform | null) => void;
   selectedPlatform: Platform | null;
+  onSelectPlatform: (platform: Platform | null) => void;
 }
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {

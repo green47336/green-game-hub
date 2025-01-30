@@ -1,4 +1,4 @@
-import { Game } from "@/hooks/useGames";
+import { Game, Platform } from "@/hooks/useGames";
 import { Card, Flex, HStack, Image } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
@@ -6,9 +6,10 @@ import { Tag } from "./ui/tag";
 
 interface Props {
   game: Game;
+  onSelectPlatform: (platform: Platform | null) => void;
 }
 
-const GameCard = ({ game }: Props) => {
+const GameCard = ({ game, onSelectPlatform }: Props) => {
   return (
     <Card.Root>
       <Image borderRadius={5} src={getCroppedImageUrl(game.background_image)} />
@@ -16,7 +17,11 @@ const GameCard = ({ game }: Props) => {
         <HStack justifyContent="space-between">
           <Flex wrap={"wrap"} gap={1}>
             {game.platforms.map((p) => (
-              <Tag key={p.platform.id} size={"sm"}>
+              <Tag
+                onClick={() => onSelectPlatform(p.platform)}
+                key={p.platform.id}
+                size={"sm"}
+              >
                 {p.platform.name}
               </Tag>
             ))}

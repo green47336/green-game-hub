@@ -63,7 +63,12 @@ function App() {
               />
             </Flex>
           </Box>
-          <GameGrid gameQuery={gameQuery} />
+          <GameGrid
+            gameQuery={gameQuery}
+            onSelectPlatform={(platform) =>
+              setGameQuery({ ...gameQuery, platform })
+            }
+          />
         </GridItem>
       </Grid>
     </>
