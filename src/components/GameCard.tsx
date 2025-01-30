@@ -11,7 +11,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
   return (
     <Card.Root>
-      <Image src={getCroppedImageUrl(game.background_image)} />
+      <Image borderRadius={5} src={getCroppedImageUrl(game.background_image)} />
       <Card.Body>
         <HStack justifyContent="space-between">
           <Flex wrap={"wrap"} gap={1}>
