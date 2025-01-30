@@ -10,7 +10,7 @@ import {
 import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
-  onSelectGenre: (genre: Genre) => void;
+  onSelectGenre: (genre: Genre | null) => void;
   selectedGenre: Genre | null;
 }
 
@@ -26,6 +26,17 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
       <Heading fontSize="2xl" marginBottom={3}>
         Genres
       </Heading>
+      <Button
+        onClick={() => onSelectGenre(null)}
+        fontSize="sm"
+        size="xl"
+        variant="outline"
+        width="156px"
+        textWrap={"wrap"}
+        marginBottom={1}
+      >
+        All Genres
+      </Button>
       <List.Root variant="plain">
         {data.map((genre) => (
           <List.Item key={genre.id} paddingY={1}>
