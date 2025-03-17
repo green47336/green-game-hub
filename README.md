@@ -6,6 +6,6 @@
 - You will need to supply your own http://rawg.io API key. Make a ```.env``` that supplies it as ```VITE_RAWG_API_KEY```.
 
 ```js
-npm i
-npm run dev
+yarn install
+yarn dev
 ```
