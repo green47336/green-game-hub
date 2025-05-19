@@ -1,11 +1,12 @@
 import useGames from "@/hooks/useGames";
 import { Platform } from "@/hooks/usePlatforms";
-import { Box, Button, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import { GameQuery } from "../App";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 import React from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 interface Props {
   gameQuery: GameQuery;
@@ -13,21 +14,33 @@ interface Props {
 }
 
 const GameGrid = ({ gameQuery, onSelectPlatform }: Props) => {
-  const {
-    data,
-    error,
-    isLoading,
-    isFetchingNextPage,
-    fetchNextPage,
-    hasNextPage,
-  } = useGames(gameQuery);
+  const { data, error, isLoading, fetchNextPage, hasNextPage } =
+    useGames(gameQuery);
   const skeletons = Array.from({ length: 20 });
 
   if (error) return <Text>{error.message}</Text>;
 
+  const fetchedGamesCount =
+    data?.pages.reduce((total, page) => {
+      return total + page.results.length;
+    }, 0) || 0;
+
   return (
-    <Box padding="15px">
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} gap={2}>
+    <InfiniteScroll
+      dataLength={fetchedGamesCount}
+      hasMore={hasNextPage}
+      next={fetchNextPage}
+      loader={
+        <Box padding="20px" textAlign="center">
+          <Spinner />
+        </Box>
+      }
+    >
+      <SimpleGrid
+        padding="15px"
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        gap={2}
+      >
         {isLoading &&
           skeletons.map((_, index) => (
             <GameCardContainer key={index}>
@@ -44,17 +57,7 @@ const GameGrid = ({ gameQuery, onSelectPlatform }: Props) => {
           </React.Fragment>
         ))}
       </SimpleGrid>
-      {hasNextPage && (
-        <Button
-          onClick={() => fetchNextPage()}
-          marginY={5}
-          width="100%"
-          variant="outline"
-        >
-          {isFetchingNextPage ? "Comin' Right Up..." : "Load More"}
-        </Button>
-      )}
-    </Box>
+    </InfiniteScroll>
   );
 };
 
