@@ -7,7 +7,7 @@ import { Tag } from "./ui/tag";
 
 interface Props {
   game: Game;
-  onSelectPlatform: (platform: Platform | null) => void;
+  onSelectPlatform: (platform: Platform) => void;
 }
 
 const GameCard = ({ game, onSelectPlatform }: Props) => {

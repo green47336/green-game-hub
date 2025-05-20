@@ -10,7 +10,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 interface Props {
   gameQuery: GameQuery;
-  onSelectPlatform: (platform: Platform | null) => void;
+  onSelectPlatform: (platform: Platform) => void;
 }
 
 const GameGrid = ({ gameQuery, onSelectPlatform }: Props) => {
