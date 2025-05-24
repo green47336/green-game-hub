@@ -1,5 +1,5 @@
 import { Game } from "@/hooks/useGames";
-import { Platform } from "@/hooks/usePlatforms";
+import useGameQueryStore from "@/store";
 import { Card, Flex, HStack, Image } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
@@ -7,10 +7,11 @@ import { Tag } from "./ui/tag";
 
 interface Props {
   game: Game;
-  onSelectPlatform: (platform: Platform) => void;
 }
 
-const GameCard = ({ game, onSelectPlatform }: Props) => {
+const GameCard = ({ game }: Props) => {
+  const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
+
   return (
     <Card.Root>
       <Image borderRadius={5} src={getCroppedImageUrl(game.background_image)} />
@@ -19,7 +20,7 @@ const GameCard = ({ game, onSelectPlatform }: Props) => {
           <Flex wrap={"wrap"} gap={1}>
             {game.platforms.map((p) => (
               <Tag
-                onClick={() => onSelectPlatform(p.platform)}
+                onClick={() => setSelectedPlatformId(p.platform.id)}
                 key={p.platform.id}
                 size={"sm"}
               >
