@@ -4,6 +4,7 @@ import { Card, Flex, HStack, Image } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
 import { Tag } from "./ui/tag";
+import { Link } from "react-router";
 
 interface Props {
   game: Game;
@@ -38,7 +39,7 @@ const GameCard = ({ game }: Props) => {
         paddingBottom={5}
         paddingTop={0}
       >
-        {game.name}
+        <Link to={"/games/" + game.slug}>{game.name}</Link>
       </Card.Header>
     </Card.Root>
   );
