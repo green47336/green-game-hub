@@ -8,36 +8,34 @@ import SortSelector from "./components/SortSelector";
 
 function App() {
   return (
-    <>
-      <Grid
-        templateAreas={{
-          base: `"nav" "main"`,
-          lg: `"nav nav" "aside main"`, // 1024px
-        }}
-        templateColumns={{ base: "1fr", lg: "200px 1fr" }}
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`, // 1024px
+      }}
+      templateColumns={{ base: "1fr", lg: "200px 1fr" }}
+    >
+      <GridItem area="nav">
+        <NavBar />
+      </GridItem>
+      <GridItem
+        area="aside"
+        paddingX={5}
+        display={{ base: "none", lg: "block" }}
       >
-        <GridItem area="nav">
-          <NavBar />
-        </GridItem>
-        <GridItem
-          area="aside"
-          paddingX={5}
-          display={{ base: "none", lg: "block" }}
-        >
-          <GenreList />
-        </GridItem>
-        <GridItem area="main">
-          <Box paddingLeft={4}>
-            <GameHeading />
-            <Flex gap={2}>
-              <PlatformSelector />
-              <SortSelector />
-            </Flex>
-          </Box>
-          <GameGrid />
-        </GridItem>
-      </Grid>
-    </>
+        <GenreList />
+      </GridItem>
+      <GridItem area="main">
+        <Box paddingLeft={4}>
+          <GameHeading />
+          <Flex gap={2}>
+            <PlatformSelector />
+            <SortSelector />
+          </Flex>
+        </Box>
+        <GameGrid />
+      </GridItem>
+    </Grid>
   );
 }
 
