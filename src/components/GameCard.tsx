@@ -1,10 +1,10 @@
-import { Game } from "@/entities/Game";
+import Game from "@/entities/Game";
 import useGameQueryStore from "@/store";
 import { Card, Flex, HStack, Image } from "@chakra-ui/react";
+import { Link } from "react-router";
 import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
 import { Tag } from "./ui/tag";
-import { Link } from "react-router";
 
 interface Props {
   game: Game;
