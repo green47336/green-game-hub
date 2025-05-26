@@ -7,7 +7,6 @@ interface Props {
   game: Game;
 }
 const GameAttributes = ({ game }: Props) => {
-  console.log(game.developers);
   return (
     <SimpleGrid columns={2} as="dl">
       <DefinitionItem term="Platforms">
