@@ -2,6 +2,7 @@ import Platform from "@/entities/Platform";
 import Genre from "./Genre";
 import Publisher from "./Publisher";
 import Developer from "./Developer";
+import Creator from "./Creator";
 
 export default interface Game {
   platforms: { platform: Platform }[];
@@ -10,6 +11,7 @@ export default interface Game {
   slug: string;
   genres: Genre[];
   developers: Developer[];
+  creators: Creator[];
   publishers: Publisher[];
   description_raw: string;
   background_image: string;

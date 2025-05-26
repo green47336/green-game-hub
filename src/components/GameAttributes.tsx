@@ -29,6 +29,13 @@ const GameAttributes = ({ game }: Props) => {
           <Text key={developer.id}>{developer.name}</Text>
         ))}
       </DefinitionItem>
+      {game.creators && (
+        <DefinitionItem term="Creators">
+          {game.creators?.map((creator) => (
+            <Text key={creator.id}>{creator.name}</Text>
+          ))}
+        </DefinitionItem>
+      )}
       <DefinitionItem term="Publishers">
         {game.publishers?.map((publisher) => (
           <Text key={publisher.id}>{publisher.name}</Text>
