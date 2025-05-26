@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, List, Stack } from "@chakra-ui/react";
+import { Button, Heading, HStack, Stack } from "@chakra-ui/react";
 import { Skeleton, SkeletonText } from "./ui/skeleton";
 
 const GenreListSkeleton = () => {

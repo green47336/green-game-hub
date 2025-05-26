@@ -1,14 +1,7 @@
 import useGenres from "@/hooks/useGenres";
-import {
-  Button,
-  Heading,
-  HStack,
-  Image,
-  List,
-  Spinner,
-} from "@chakra-ui/react";
-import getCroppedImageUrl from "../services/image-url";
 import useGameQueryStore from "@/store";
+import { Button, Heading, HStack, Image, List } from "@chakra-ui/react";
+import getCroppedImageUrl from "../services/image-url";
 import GenreListSkeleton from "./GenreListSkeleton";
 
 const GenreList = () => {
