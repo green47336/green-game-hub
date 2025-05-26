@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 import useGameQueryStore from "@/store";
+import GenreListSkeleton from "./GenreListSkeleton";
 
 const GenreList = () => {
   const { data, isLoading, error } = useGenres();
@@ -17,7 +18,7 @@ const GenreList = () => {
 
   if (error) return null;
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <GenreListSkeleton />;
 
   return (
     <>
