@@ -10,7 +10,18 @@ const GameDetailPage = () => {
   const { slug } = useParams();
   const { data: game, isLoading, error } = useGame(slug!);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <GridItem
+        w="100vw"
+        h="60vh"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Spinner size="xl" />
+      </GridItem>
+    );
 
   if (error || !game) throw error;
 
