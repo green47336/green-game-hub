@@ -15,7 +15,12 @@ const GameCard = ({ game }: Props) => {
 
   return (
     <Card.Root>
-      <Image borderRadius={5} src={getCroppedImageUrl(game.background_image)} />
+      <Link to={"/games/" + game.slug}>
+        <Image
+          borderRadius={5}
+          src={getCroppedImageUrl(game.background_image)}
+        />
+      </Link>
       <Card.Body>
         <HStack justifyContent="space-between">
           <Flex wrap={"wrap"} gap={1}>
@@ -24,6 +29,7 @@ const GameCard = ({ game }: Props) => {
                 onClick={() => setSelectedPlatformId(p.platform.id)}
                 key={p.platform.id}
                 size={"sm"}
+                _hover={{ cursor: "pointer" }}
               >
                 {p.platform.name}
               </Tag>
