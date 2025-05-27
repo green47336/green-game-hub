@@ -5,7 +5,7 @@ import Developer from "./Developer";
 import Creator from "./Creator";
 
 export default interface Game {
-  platforms: { platform: Platform }[];
+  platforms?: { platform: Platform }[];
   id: number;
   name: string;
   slug: string;

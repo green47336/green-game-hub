@@ -24,7 +24,7 @@ const GameCard = ({ game }: Props) => {
       <Card.Body>
         <HStack justifyContent="space-between">
           <Flex wrap={"wrap"} gap={1}>
-            {game.platforms.map((p) => (
+            {game.platforms?.map((p) => (
               <Tag
                 onClick={() => setSelectedPlatformId(p.platform.id)}
                 key={p.platform.id}
