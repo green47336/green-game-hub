@@ -41,11 +41,17 @@ const GameGrid = () => {
           ))}
         {data?.pages.map((page, index) => (
           <React.Fragment key={index}>
-            {page.results.map((game) => (
-              <GameCardContainer key={game.id}>
-                <GameCard game={game} />
-              </GameCardContainer>
-            ))}
+            {/* While not ideal, this method of filterting is currently the best solution to ensuring content is relatively tame until rawg.io adds a server side option. */}
+            {page.results
+              .filter(
+                (game) =>
+                  game.esrb_rating && game.esrb_rating?.name !== "Adults Only"
+              )
+              .map((game) => (
+                <GameCardContainer key={game.id}>
+                  <GameCard game={game} />
+                </GameCardContainer>
+              ))}
           </React.Fragment>
         ))}
       </SimpleGrid>

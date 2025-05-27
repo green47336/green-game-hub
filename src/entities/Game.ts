@@ -3,6 +3,7 @@ import Genre from "./Genre";
 import Publisher from "./Publisher";
 import Developer from "./Developer";
 import Creator from "./Creator";
+import ESRBRating from "./ESRBRating";
 
 export default interface Game {
   platforms?: { platform: Platform }[];
@@ -17,4 +18,5 @@ export default interface Game {
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
+  esrb_rating: ESRBRating;
 }
