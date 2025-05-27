@@ -20,9 +20,9 @@ const SearchInput = () => {
     >
       <Input
         ref={ref}
-        borderRadius={20}
+        borderRadius={5}
         placeholder="Search..."
-        variant="subtle"
+        variant="outline"
       />
     </form>
   );
