@@ -8,7 +8,13 @@ const NavBar = () => {
   return (
     <HStack justifyContent="space-between" padding="10px">
       <Link to="/">
-        <Image src={logo} boxSize="60px" objectFit="cover" borderRadius={10} />
+        <Image
+          src={logo}
+          boxSize="60px"
+          minWidth="60px"
+          minHeight="60px"
+          borderRadius={5}
+        />
       </Link>
       <SearchInput />
       <ColorModeButton />
