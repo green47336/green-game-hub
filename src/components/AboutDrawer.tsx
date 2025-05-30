@@ -28,11 +28,20 @@ const AboutDrawer = () => {
                 <Stack>
                   <p>
                     This app uses the{" "}
-                    <a href="https://api.rawg.io/docs/">
+                    <a
+                      href="https://api.rawg.io/docs/"
+                      style={{ fontWeight: "bold" }}
+                    >
                       RAWG Video Games Database API
                     </a>{" "}
                     for all game data including media.
                   </p>
+                  <hr
+                    style={{
+                      height: "2px",
+                      margin: "10px",
+                    }}
+                  />
                   <HStack>
                     <Avatar.Root size="2xl">
                       <Avatar.Fallback name="Alex Green" />
@@ -42,11 +51,17 @@ const AboutDrawer = () => {
                     </Avatar.Root>
                     <p>
                       Green Game Hub is a project by{" "}
-                      <a href="https://www.linkedin.com/in/richard-alex-green/">
+                      <a
+                        href="https://www.linkedin.com/in/richard-alex-green/"
+                        style={{ fontWeight: "bold" }}
+                      >
                         Alex Green
                       </a>
-                      . Here's the{" "}
-                      <a href="https://github.com/green47336/game-hub">
+                      . Check out the{" "}
+                      <a
+                        href="https://github.com/green47336/game-hub"
+                        style={{ fontWeight: "bold" }}
+                      >
                         GitHub
                       </a>{" "}
                       page to learn more!
