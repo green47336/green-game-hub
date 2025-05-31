@@ -6,16 +6,16 @@ interface Props {
 
 const ScreenshotDisplay = ({ src }: Props) => {
   return (
-    <Dialog.Root size="lg" placement="center" motionPreset="slide-in-bottom">
+    <Dialog.Root placement="center" motionPreset="slide-in-bottom">
       <Dialog.Trigger asChild>
-        <Image src={src} />
+        <Image src={src} cursor="pointer" />
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
         <Dialog.Positioner>
-          <Dialog.Content>
+          <Dialog.Content margin={1}>
             <Dialog.Body padding={0}>
-              <Image src={src} />
+              <Image src={src} w={720} />
             </Dialog.Body>
             <Dialog.CloseTrigger asChild>
               <CloseButton size="lg" />
