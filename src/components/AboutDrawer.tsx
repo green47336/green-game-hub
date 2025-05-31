@@ -1,20 +1,23 @@
 import {
+  Avatar,
   Button,
   CloseButton,
   Drawer,
-  Portal,
-  Avatar,
-  Stack,
   HStack,
-  Separator,
   Link,
+  Portal,
+  Separator,
+  Stack,
 } from "@chakra-ui/react";
+
+import { useRef } from "react";
 
 import { LuExternalLink } from "react-icons/lu";
 
 const AboutDrawer = () => {
+  const ref = useRef<HTMLInputElement>(null);
   return (
-    <Drawer.Root>
+    <Drawer.Root initialFocusEl={() => ref.current}>
       <Drawer.Trigger asChild>
         <Button variant="outline" size="sm">
           About
