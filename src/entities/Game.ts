@@ -19,4 +19,5 @@ export default interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   esrb_rating: ESRBRating;
+  released: string;
 }

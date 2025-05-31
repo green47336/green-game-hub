@@ -55,6 +55,17 @@ const GameAttributes = ({ game }: Props) => {
           <Text>{game.esrb_rating.name}</Text>
         </DefinitionItem>
       )}
+      {game.released && (
+        <DefinitionItem term="Release Date">
+          <Text>
+            {new Date(game.released).toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </Text>
+        </DefinitionItem>
+      )}
     </SimpleGrid>
   );
 };
