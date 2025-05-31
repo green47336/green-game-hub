@@ -6,6 +6,7 @@ import {
   Avatar,
   Stack,
   HStack,
+  Separator,
 } from "@chakra-ui/react";
 
 const AboutDrawer = () => {
@@ -36,12 +37,7 @@ const AboutDrawer = () => {
                     </a>{" "}
                     for all game data including media.
                   </p>
-                  <hr
-                    style={{
-                      height: "2px",
-                      margin: "10px",
-                    }}
-                  />
+                  <Separator />
                   <HStack>
                     <Avatar.Root size="2xl">
                       <Avatar.Fallback name="Alex Green" />
