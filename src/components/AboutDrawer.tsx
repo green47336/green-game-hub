@@ -7,7 +7,10 @@ import {
   Stack,
   HStack,
   Separator,
+  Link,
 } from "@chakra-ui/react";
+
+import { LuExternalLink } from "react-icons/lu";
 
 const AboutDrawer = () => {
   return (
@@ -29,12 +32,9 @@ const AboutDrawer = () => {
                 <Stack>
                   <p>
                     This app uses the{" "}
-                    <a
-                      href="https://api.rawg.io/docs/"
-                      style={{ fontWeight: "bold" }}
-                    >
-                      RAWG Video Games Database API
-                    </a>{" "}
+                    <Link href="https://api.rawg.io/docs/" variant="underline">
+                      RAWG Video Games Database API <LuExternalLink />
+                    </Link>{" "}
                     for all game data including media.
                   </p>
                   <Separator />
@@ -47,19 +47,19 @@ const AboutDrawer = () => {
                     </Avatar.Root>
                     <p>
                       Green Game Hub is a project by{" "}
-                      <a
+                      <Link
                         href="https://www.linkedin.com/in/richard-alex-green/"
-                        style={{ fontWeight: "bold" }}
+                        variant="underline"
                       >
-                        Alex Green
-                      </a>
+                        Alex Green <LuExternalLink />
+                      </Link>
                       . Check out the{" "}
-                      <a
+                      <Link
                         href="https://github.com/green47336/game-hub"
-                        style={{ fontWeight: "bold" }}
+                        variant="underline"
                       >
-                        GitHub
-                      </a>{" "}
+                        GitHub <LuExternalLink />
+                      </Link>{" "}
                       page to learn more!
                     </p>
                   </HStack>
