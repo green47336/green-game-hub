@@ -7,7 +7,6 @@ interface Props {
   game: Game;
 }
 const GameAttributes = ({ game }: Props) => {
-  console.log(game.platforms);
   return (
     <SimpleGrid columns={2} as="dl">
       {!!game.platforms?.length && (
@@ -49,6 +48,11 @@ const GameAttributes = ({ game }: Props) => {
       {game.metacritic && (
         <DefinitionItem term="Metascore">
           <CriticScore score={game.metacritic} />
+        </DefinitionItem>
+      )}
+      {game.esrb_rating && (
+        <DefinitionItem term="ERSB Rating">
+          <Text>{game.esrb_rating.name}</Text>
         </DefinitionItem>
       )}
     </SimpleGrid>
