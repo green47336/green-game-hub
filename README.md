@@ -8,4 +8,4 @@ yarn install
 yarn dev
 ```
 
-- This project follows Mosh Hamedani's React 18 + TypeScript course: https://codewithmosh.com/
+- This project expands upon Mosh Hamedani's React 18 + TypeScript course: https://codewithmosh.com/
