@@ -1,12 +1,20 @@
 import { Dialog, Portal, CloseButton, Image } from "@chakra-ui/react";
 
+import { useRef } from "react";
+
 interface Props {
   src: string;
 }
 
 const ScreenshotDisplay = ({ src }: Props) => {
+  const ref = useRef<HTMLInputElement>(null);
+
   return (
-    <Dialog.Root placement="center" motionPreset="slide-in-bottom">
+    <Dialog.Root
+      placement="center"
+      motionPreset="slide-in-bottom"
+      initialFocusEl={() => ref.current}
+    >
       <Dialog.Trigger asChild>
         <Image src={src} cursor="pointer" />
       </Dialog.Trigger>
