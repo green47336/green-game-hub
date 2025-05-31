@@ -17,11 +17,7 @@ const GameAttributes = ({ game }: Props) => {
           ))}
         </DefinitionItem>
       )}
-      {game.metacritic && (
-        <DefinitionItem term="Metascore">
-          <CriticScore score={game.metacritic} />
-        </DefinitionItem>
-      )}
+
       {!!game.genres.length && (
         <DefinitionItem term="Genres">
           {game.genres.map((genre) => (
@@ -48,6 +44,11 @@ const GameAttributes = ({ game }: Props) => {
           {game.publishers?.map((publisher) => (
             <Text key={publisher.id}>{publisher.name}</Text>
           ))}
+        </DefinitionItem>
+      )}
+      {game.metacritic && (
+        <DefinitionItem term="Metascore">
+          <CriticScore score={game.metacritic} />
         </DefinitionItem>
       )}
     </SimpleGrid>
