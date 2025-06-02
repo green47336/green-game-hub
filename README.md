@@ -10,6 +10,7 @@ Front end project for displaying various game data via the [RAWG Video Games Dat
 | TypeScript                                     | Type safety and tooling                   |
 | Chakra UI                                      | UI components and light/dark theme        |
 | TanStack Query (formerly known as React Query) | Handling data-fetching                    |
+| Zustand                                        | State management                          |
 | React Router                                   | Easy routing without refetching data      |
 | Vercel                                         | Deployment for front end and proxy server |
 | Vite                                           | Build tool                                |
