@@ -13,6 +13,7 @@ Front end project for displaying various game data via the [RAWG Video Games Dat
 | Zustand                                        | State management                          |
 | React Router                                   | Easy routing without refetching data      |
 | Vercel                                         | Deployment for front end and proxy server |
+| Node.js                                         | JavaScript Runtime |
 | Vite                                           | Build tool                                |
 
 ---
