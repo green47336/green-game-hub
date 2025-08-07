@@ -14,7 +14,6 @@ const GameHeading = () => {
   return (
     <Card.Root
       bg="gray.900"
-      _dark={{ bg: "gray.900" }}
       padding={4}
       marginY={5}
       width="fit-content"

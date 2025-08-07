@@ -35,7 +35,7 @@ const GameDetailPage = () => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={5} margin={5}>
       <GridItem>
-        <Card.Root bg="gray.900" _dark={{ bg: "gray.900" }} padding={6}>
+        <Card.Root bg="gray.900" padding={6}>
           <Heading
             size="4xl"
             fontWeight="extrabold"
@@ -54,7 +54,7 @@ const GameDetailPage = () => {
         </Card.Root>
       </GridItem>
       <GridItem>
-        <Card.Root bg="gray.900" _dark={{ bg: "gray.900" }} padding={6}>
+        <Card.Root bg="gray.900" padding={6}>
           <Box
             padding={2}
             display="flex"

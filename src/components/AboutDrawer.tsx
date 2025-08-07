@@ -24,7 +24,6 @@ const AboutDrawer = () => {
           size="sm"
           bg="gray.900"
           color="white"
-          _dark={{ bg: "gray.900", color: "white" }}
           _hover={{
             cursor: "pointer",
             transform: "scale(1.05)",

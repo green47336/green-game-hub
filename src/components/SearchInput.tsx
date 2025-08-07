@@ -25,7 +25,6 @@ const SearchInput = () => {
         variant="outline"
         bg="gray.900"
         color="white"
-        _dark={{ bg: "gray.900", color: "white" }}
         _placeholder={{ color: "gray.400" }}
         _focus={{
           borderColor: "blue.500",

@@ -14,7 +14,7 @@ const GameCard = ({ game }: Props) => {
   const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
 
   return (
-    <Card.Root bg="gray.900" _dark={{ bg: "gray.900" }}>
+    <Card.Root bg="gray.900">
       <Link to={"/games/" + game.slug}>
         <Image
           borderRadius={5}

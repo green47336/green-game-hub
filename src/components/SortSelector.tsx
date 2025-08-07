@@ -41,7 +41,6 @@ const SortSelector = () => {
           size="sm"
           bg="gray.900"
           color="white"
-          _dark={{ bg: "gray.900", color: "white" }}
           _hover={{
             cursor: "pointer",
           }}
