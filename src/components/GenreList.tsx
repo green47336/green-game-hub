@@ -15,7 +15,14 @@ const GenreList = () => {
 
   return (
     <>
-      <Heading fontSize="2xl" marginBottom={3}>
+      <Heading
+        fontSize="2xl"
+        marginBottom={3}
+        fontWeight="extrabold"
+        textAlign="center"
+        letterSpacing="tight"
+        lineHeight="shorter"
+      >
         Genres
       </Heading>
       <Button

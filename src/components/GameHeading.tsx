@@ -2,7 +2,6 @@ import useGenre from "@/hooks/useGenre";
 import usePlatform from "@/hooks/usePlatform";
 import useGameQueryStore from "@/store";
 import { Heading } from "@chakra-ui/react";
-import { colorCycle } from "@/constants/animations";
 
 const GameHeading = () => {
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
@@ -21,10 +20,6 @@ const GameHeading = () => {
       textAlign="center"
       letterSpacing="tight"
       lineHeight="shorter"
-      textShadow="2px 2px 4px rgba(0,0,0,0.2)"
-      css={{
-        animation: `${colorCycle} 8s ease-in-out infinite`,
-      }}
     >
       {heading}
     </Heading>
