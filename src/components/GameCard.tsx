@@ -29,7 +29,13 @@ const GameCard = ({ game }: Props) => {
                 onClick={() => setSelectedPlatformId(p.platform.id)}
                 key={p.platform.id}
                 size={"sm"}
-                _hover={{ cursor: "pointer" }}
+                _hover={{
+                  cursor: "pointer",
+                  transform: "scale(1.05)",
+                  color: "white",
+                  shadow: "md",
+                }}
+                transition="all 0.2s ease-in-out"
               >
                 {p.platform.name}
               </Tag>
