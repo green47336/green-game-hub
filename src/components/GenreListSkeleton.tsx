@@ -21,7 +21,7 @@ const GenreListSkeleton = () => {
       <Stack>
         {Array.from({ length: 19 }).map((_, i) => (
           <HStack key={i}>
-            <Skeleton boxSize="48px" borderRadius={8} objectFit="cover" />
+            <Skeleton boxSize="48px" borderRadius={5} objectFit="cover" />
             <SkeletonText noOfLines={2} width={95} />
           </HStack>
         ))}

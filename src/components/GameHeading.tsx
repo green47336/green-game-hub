@@ -12,7 +12,14 @@ const GameHeading = () => {
 
   const heading = `${platform?.name || ""} ${genre?.name || ""} Games`;
   return (
-    <Card.Root bg="gray.900" _dark={{ bg: "gray.900" }} padding={4} marginY={5}>
+    <Card.Root
+      bg="gray.900"
+      _dark={{ bg: "gray.900" }}
+      padding={4}
+      marginY={5}
+      width="fit-content"
+      marginX="auto"
+    >
       <Heading
         as="h1"
         fontSize="5xl"

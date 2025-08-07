@@ -1,6 +1,14 @@
 import useGenres from "@/hooks/useGenres";
 import useGameQueryStore from "@/store";
-import { Button, Card, Heading, HStack, Image, List } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Card,
+  Heading,
+  HStack,
+  Image,
+  List,
+} from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 import GenreListSkeleton from "./GenreListSkeleton";
 
@@ -17,9 +25,13 @@ const GenreList = () => {
     <>
       <Card.Root
         bg="gray.900"
-        _dark={{ bg: "gray.900" }}
-        padding={4}
+        borderRadius={5}
+        paddingX={4}
+        paddingY={3}
         marginBottom={3}
+        width="fit"
+        maxWidth="280px"
+        marginX="auto"
       >
         <Heading
           fontSize="2xl"
@@ -37,50 +49,71 @@ const GenreList = () => {
         fontSize="sm"
         size="xl"
         variant="outline"
-        width="156px"
+        fontWeight={selectedGenreId === undefined ? "bold" : "normal"}
+        width="100%"
+        maxWidth="280px"
         textWrap={"wrap"}
         marginBottom={1}
         bg="gray.900"
         color="white"
-        _dark={{ bg: "gray.900", color: "white" }}
+        justifyContent="flex-start"
+        paddingX={3}
+        paddingY={2}
         _hover={{
           cursor: "pointer",
           transform: "scale(1.05)",
         }}
         transition="all 0.2s ease-in-out"
       >
-        All Genres
+        <HStack gap={3} width="100%">
+          <Box
+            boxSize="32px"
+            borderRadius={5}
+            bg="gray.700"
+            flexShrink={0}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <span style={{ fontSize: "20px", color: "white" }}>☰</span>
+          </Box>
+          <span>All Genres</span>
+        </HStack>
       </Button>
       <List.Root variant="plain">
         {data?.results.map((genre) => (
           <List.Item key={genre.id} paddingY={1}>
-            <HStack>
-              <Image
-                boxSize="48px"
-                borderRadius={5}
-                objectFit="cover"
-                src={getCroppedImageUrl(genre.image_background)}
-              />
-              <Button
-                onClick={() => setSelectedGenreId(genre.id)}
-                fontSize="sm"
-                size="xl"
-                variant="outline"
-                fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
-                width={100}
-                textWrap={"wrap"}
-                bg="gray.900"
-                color="white"
-                _dark={{ bg: "gray.900", color: "white" }}
-                _hover={{
-                  cursor: "pointer",
-                  transform: "scale(1.05)",
-                }}
-                transition="all 0.2s ease-in-out"
-              >
-                {genre.name}
-              </Button>
-            </HStack>
+            <Button
+              onClick={() => setSelectedGenreId(genre.id)}
+              fontSize="sm"
+              size="xl"
+              variant="outline"
+              fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
+              width="100%"
+              maxWidth="280px"
+              textWrap={"wrap"}
+              bg="gray.900"
+              color="white"
+              justifyContent="flex-start"
+              paddingX={3}
+              paddingY={2}
+              _hover={{
+                cursor: "pointer",
+                transform: "scale(1.05)",
+              }}
+              transition="all 0.2s ease-in-out"
+            >
+              <HStack gap={3} width="100%">
+                <Image
+                  boxSize="32px"
+                  borderRadius={5}
+                  objectFit="cover"
+                  src={getCroppedImageUrl(genre.image_background)}
+                  flexShrink={0}
+                />
+                <span>{genre.name}</span>
+              </HStack>
+            </Button>
           </List.Item>
         ))}
       </List.Root>

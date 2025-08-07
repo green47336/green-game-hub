@@ -13,7 +13,7 @@ const HomePage = () => {
           base: `"main"`,
           lg: `"aside main"`, // 1024px
         }}
-        templateColumns={{ base: "1fr", lg: "200px 1fr" }}
+        templateColumns={{ base: "1fr", lg: "260px 1fr" }}
       >
         <GridItem
           area="aside"
