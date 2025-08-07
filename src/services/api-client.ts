@@ -7,7 +7,12 @@ export interface FetchResponse<T> {
 }
 
 const axiosInstance = axios.create({
-  baseURL: "https://green-game-hub-proxy.vercel.app/api/",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  params: {
+    ...(import.meta.env.VITE_RAWG_API_KEY && {
+      key: import.meta.env.VITE_RAWG_API_KEY,
+    }),
+  },
 });
 
 class APIClient<T> {
