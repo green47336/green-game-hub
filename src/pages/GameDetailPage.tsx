@@ -55,14 +55,7 @@ const GameDetailPage = () => {
       </GridItem>
       <GridItem>
         <Card.Root bg="gray.900" padding={6}>
-          <Box
-            padding={2}
-            display="flex"
-            justifyContent="center"
-            marginBottom={4}
-          >
-            <GameTrailer gameId={game.id} />
-          </Box>
+          <GameTrailer gameId={game.id} />
           <GameScreenshots gameId={game.id} />
         </Card.Root>
       </GridItem>
