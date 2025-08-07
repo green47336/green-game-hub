@@ -15,6 +15,12 @@ const NavBar = () => {
           minWidth="60px"
           minHeight="60px"
           borderRadius={5}
+          _hover={{
+            cursor: "pointer",
+            transform: "scale(1.05)",
+            color: "white",
+          }}
+          transition="all 0.2s ease-in-out"
         />
       </Link>
       <SearchInput />

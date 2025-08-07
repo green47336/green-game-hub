@@ -19,7 +19,16 @@ const AboutDrawer = () => {
   return (
     <Drawer.Root initialFocusEl={() => ref.current}>
       <Drawer.Trigger asChild>
-        <Button variant="outline" size="sm">
+        <Button
+          variant="outline"
+          size="sm"
+          _hover={{
+            cursor: "pointer",
+            transform: "scale(1.05)",
+            color: "white",
+          }}
+          transition="all 0.2s ease-in-out"
+        >
           About
         </Button>
       </Drawer.Trigger>
