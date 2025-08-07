@@ -36,7 +36,17 @@ const SortSelector = () => {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button variant="outline" size="sm">
+        <Button
+          variant="outline"
+          size="sm"
+          bg="gray.900"
+          color="white"
+          _dark={{ bg: "gray.900", color: "white" }}
+          _hover={{
+            cursor: "pointer",
+          }}
+          transition="all 0.2s ease-in-out"
+        >
           Order by: {currentSortOrder?.label || "Relevance"} <BsChevronDown />
         </Button>
       </MenuTrigger>

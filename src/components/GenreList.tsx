@@ -1,6 +1,6 @@
 import useGenres from "@/hooks/useGenres";
 import useGameQueryStore from "@/store";
-import { Button, Heading, HStack, Image, List } from "@chakra-ui/react";
+import { Button, Card, Heading, HStack, Image, List } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 import GenreListSkeleton from "./GenreListSkeleton";
 
@@ -15,16 +15,23 @@ const GenreList = () => {
 
   return (
     <>
-      <Heading
-        fontSize="2xl"
+      <Card.Root
+        bg="gray.900"
+        _dark={{ bg: "gray.900" }}
+        padding={4}
         marginBottom={3}
-        fontWeight="extrabold"
-        textAlign="center"
-        letterSpacing="tight"
-        lineHeight="shorter"
       >
-        Genres
-      </Heading>
+        <Heading
+          fontSize="2xl"
+          fontWeight="extrabold"
+          textAlign="center"
+          letterSpacing="tight"
+          lineHeight="shorter"
+          color="white"
+        >
+          Genres
+        </Heading>
+      </Card.Root>
       <Button
         onClick={() => setSelectedGenreId(undefined)}
         fontSize="sm"
@@ -33,10 +40,12 @@ const GenreList = () => {
         width="156px"
         textWrap={"wrap"}
         marginBottom={1}
+        bg="gray.900"
+        color="white"
+        _dark={{ bg: "gray.900", color: "white" }}
         _hover={{
           cursor: "pointer",
           transform: "scale(1.05)",
-          color: "white",
         }}
         transition="all 0.2s ease-in-out"
       >
@@ -60,10 +69,12 @@ const GenreList = () => {
                 fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
                 width={100}
                 textWrap={"wrap"}
+                bg="gray.900"
+                color="white"
+                _dark={{ bg: "gray.900", color: "white" }}
                 _hover={{
                   cursor: "pointer",
                   transform: "scale(1.05)",
-                  color: "white",
                 }}
                 transition="all 0.2s ease-in-out"
               >

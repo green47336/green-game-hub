@@ -4,10 +4,17 @@ import SearchInput from "./SearchInput";
 import { ColorModeButton } from "./ui/color-mode";
 import { Link } from "react-router";
 import AboutDrawer from "./AboutDrawer";
+import { backgroundColorCycle } from "@/constants/animations";
 
 const NavBar = () => {
   return (
-    <HStack justifyContent="space-between" padding="10px">
+    <HStack
+      justifyContent="space-between"
+      padding="10px"
+      css={{
+        animation: `${backgroundColorCycle} 20s ease-in-out infinite`,
+      }}
+    >
       <Link to="/">
         <Image
           src={logo}

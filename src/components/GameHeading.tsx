@@ -1,7 +1,7 @@
 import useGenre from "@/hooks/useGenre";
 import usePlatform from "@/hooks/usePlatform";
 import useGameQueryStore from "@/store";
-import { Heading } from "@chakra-ui/react";
+import { Card, Heading } from "@chakra-ui/react";
 
 const GameHeading = () => {
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
@@ -12,17 +12,20 @@ const GameHeading = () => {
 
   const heading = `${platform?.name || ""} ${genre?.name || ""} Games`;
   return (
-    <Heading
-      as="h1"
-      marginY={5}
-      fontSize="5xl"
-      fontWeight="extrabold"
-      textAlign="center"
-      letterSpacing="tight"
-      lineHeight="shorter"
-    >
-      {heading}
-    </Heading>
+    <Card.Root bg="gray.900" _dark={{ bg: "gray.900" }} padding={4} marginY={5}>
+      <Heading
+        as="h1"
+        fontSize="5xl"
+        fontWeight="extrabold"
+        textAlign="center"
+        letterSpacing="tight"
+        lineHeight="shorter"
+        textShadow="2px 2px 4px rgba(0,0,0,0.2)"
+        color="white"
+      >
+        {heading}
+      </Heading>
+    </Card.Root>
   );
 };
 

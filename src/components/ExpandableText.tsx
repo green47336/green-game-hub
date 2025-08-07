@@ -24,6 +24,14 @@ const ExpandableText = ({ children }: Props) => {
         fontWeight="bold"
         variant="outline"
         onClick={() => setExpanded(!expanded)}
+        bg="gray.900"
+        color="white"
+        _dark={{ bg: "gray.900", color: "white" }}
+        _hover={{
+          cursor: "pointer",
+          transform: "scale(1.05)",
+        }}
+        transition="all 0.2s ease-in-out"
       >
         {expanded ? "Show Less " : "Show More"}
       </Button>

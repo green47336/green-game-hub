@@ -3,7 +3,14 @@ import GameAttributes from "@/components/GameAttributes";
 import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import useGame from "@/hooks/useGame";
-import { Box, GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  GridItem,
+  Heading,
+  SimpleGrid,
+  Spinner,
+} from "@chakra-ui/react";
 import { useParams } from "react-router";
 
 const GameDetailPage = () => {
@@ -28,24 +35,36 @@ const GameDetailPage = () => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={5} margin={5}>
       <GridItem>
-        <Heading
-          size="4xl"
-          fontWeight="extrabold"
-          textAlign="center"
-          letterSpacing="tight"
-          lineHeight="shorter"
-          marginBottom={4}
-        >
-          {game.name}
-        </Heading>
-        <ExpandableText>{game.description_raw}</ExpandableText>
-        <GameAttributes game={game} />
+        <Card.Root bg="gray.900" _dark={{ bg: "gray.900" }} padding={6}>
+          <Heading
+            size="4xl"
+            fontWeight="extrabold"
+            textAlign="center"
+            letterSpacing="tight"
+            lineHeight="shorter"
+            marginBottom={4}
+            color="white"
+          >
+            {game.name}
+          </Heading>
+          <Box color="white" marginBottom={4}>
+            <ExpandableText>{game.description_raw}</ExpandableText>
+          </Box>
+          <GameAttributes game={game} />
+        </Card.Root>
       </GridItem>
       <GridItem>
-        <Box padding={2} display="flex" justifyContent="center">
-          <GameTrailer gameId={game.id} />
-        </Box>
-        <GameScreenshots gameId={game.id} />
+        <Card.Root bg="gray.900" _dark={{ bg: "gray.900" }} padding={6}>
+          <Box
+            padding={2}
+            display="flex"
+            justifyContent="center"
+            marginBottom={4}
+          >
+            <GameTrailer gameId={game.id} />
+          </Box>
+          <GameScreenshots gameId={game.id} />
+        </Card.Root>
       </GridItem>
     </SimpleGrid>
   );

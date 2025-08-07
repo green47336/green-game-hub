@@ -23,6 +23,15 @@ const SearchInput = () => {
         borderRadius={5}
         placeholder="Search..."
         variant="outline"
+        bg="gray.900"
+        color="white"
+        _dark={{ bg: "gray.900", color: "white" }}
+        _placeholder={{ color: "gray.400" }}
+        _focus={{
+          borderColor: "blue.500",
+          boxShadow: "0 0 0 1px var(--chakra-colors-blue-500)",
+        }}
+        transition="all 0.2s ease-in-out"
       />
     </form>
   );

@@ -16,7 +16,17 @@ const PlatformSelector = () => {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button variant="outline" size="sm">
+        <Button
+          variant="outline"
+          size="sm"
+          bg="gray.900"
+          color="white"
+          _dark={{ bg: "gray.900", color: "white" }}
+          _hover={{
+            cursor: "pointer",
+          }}
+          transition="all 0.2s ease-in-out"
+        >
           {selectedPlatform?.name || "All Platforms"} <BsChevronDown />
         </Button>
       </MenuTrigger>
