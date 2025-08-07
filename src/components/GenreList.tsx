@@ -26,6 +26,12 @@ const GenreList = () => {
         width="156px"
         textWrap={"wrap"}
         marginBottom={1}
+        _hover={{
+          cursor: "pointer",
+          transform: "scale(1.05)",
+          color: "white",
+        }}
+        transition="all 0.2s ease-in-out"
       >
         All Genres
       </Button>
@@ -47,6 +53,12 @@ const GenreList = () => {
                 fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
                 width={100}
                 textWrap={"wrap"}
+                _hover={{
+                  cursor: "pointer",
+                  transform: "scale(1.05)",
+                  color: "white",
+                }}
+                transition="all 0.2s ease-in-out"
               >
                 {genre.name}
               </Button>
